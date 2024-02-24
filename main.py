@@ -21,4 +21,8 @@ def get_dataset(df_name):
     return X, y
 
 
+X, y = get_dataset(df_name)
+st.write("Shape of Dataset", X.shape)
+st.write("Number of Classes", len(np.unique(y)))
+
 
