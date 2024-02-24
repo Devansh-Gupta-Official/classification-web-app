@@ -79,3 +79,21 @@ acc = accuracy_score(y_test,y_pred)
 
 st.write(f"Classifier = {classifier_name}")
 st.write(f"Accuracy = {acc}")
+
+
+
+
+#PLOT
+pca = PCA(2)   #2 is the number of dimensions
+X_projected = pca.fit_transform(X)
+
+x1 = X_projected[:,0]
+x2 = X_projected[:,1]
+
+fig = plt.figure()
+plt.scatter(x1,x2, c=y, alpha = 0.8, cmap="viridis")
+plt.xlabel("Principal Component 1")
+plt.ylabel("Principal Component 2")
+plt.colorbar()
+st.set_option('deprecation.showPyplotGlobalUse', False)
+st.pyplot()
