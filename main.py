@@ -29,8 +29,8 @@ def get_dataset(df_name):
 
 
 X, y = get_dataset(df_name)
-st.write("Shape of Dataset", X.shape)
-st.write("Number of Classes", len(np.unique(y)))
+st.write(f"Shape of Dataset is {X.shape}")
+st.write(f"Number of Classes is {len(np.unique(y))}")
 
 def add_parameter(classifier_name):
     params=dict()
@@ -76,14 +76,17 @@ X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.2,random_state=
 classifier.fit(X_train,y_train)
 y_pred = classifier.predict(X_test)
 acc = accuracy_score(y_test,y_pred)
+acc = round(acc,4)
+acc = acc*100;
 
 st.write(f"Classifier = {classifier_name}")
-st.write(f"Accuracy = {acc}")
+st.write(f"Accuracy = {acc}%")
 
 
 
 
 #PLOT
+st.write(f"### Plotting the {df_name} dataset using PCA")
 pca = PCA(2)   #2 is the number of dimensions
 X_projected = pca.fit_transform(X)
 
