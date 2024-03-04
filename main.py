@@ -13,7 +13,7 @@ from streamlit_lottie import st_lottie
 import json
 
 st.set_page_config(
-    page_title="classification",
+    page_title="Classification",
     page_icon=":question:",
     initial_sidebar_state="auto",
     layout="wide"
