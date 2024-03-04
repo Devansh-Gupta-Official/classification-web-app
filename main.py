@@ -8,13 +8,15 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 st.title("Explore Different Classifiers")
-st.write("### Which one is the best?")
+st.write("## Which one is the best:question:")
+st.write("")
+st.write("")
 
 df_name = st.sidebar.selectbox("Select Dataset",["Iris","Breast Cancer","Wine Dataset"])
 
-classifier_name = st.sidebar.selectbox("Select Classifier",["KNN","SVM","Random Forest"])
 
 def get_dataset(df_name):
     if df_name=="Iris":
@@ -29,8 +31,30 @@ def get_dataset(df_name):
 
 
 X, y = get_dataset(df_name)
-st.write(f"Shape of Dataset is {X.shape}")
-st.write(f"Number of Classes is {len(np.unique(y))}")
+st.sidebar.write(f"Shape of Dataset is {X.shape}")
+st.sidebar.write(f"Number of Unique Classes in the Dataset is {len(np.unique(y))}")
+
+st.sidebar.write("")
+
+#PLOT
+st.sidebar.header(f"Plotting the {df_name} dataset using PCA")
+st.sidebar.write("")
+pca = PCA(2)   #2 is the number of dimensions
+X_projected = pca.fit_transform(X)
+
+x1 = X_projected[:,0]
+x2 = X_projected[:,1]
+
+fig = plt.figure()
+plt.scatter(x1,x2, c=y, alpha = 0.8, cmap="viridis")
+plt.xlabel("Principal Component 1")
+plt.ylabel("Principal Component 2")
+plt.colorbar()
+st.sidebar.pyplot()
+
+st.sidebar.write("")
+
+classifier_name = st.sidebar.selectbox("Select Classifier",["KNN","SVM","Random Forest"])
 
 def add_parameter(classifier_name):
     params=dict()
@@ -79,24 +103,24 @@ acc = accuracy_score(y_test,y_pred)
 acc = round(acc,4)
 acc = acc*100;
 
-st.write(f"Classifier = {classifier_name}")
-st.write(f"Accuracy = {acc}%")
+st.write(f"Classifier :arrow_right: {classifier_name}")
+st.write(f"Accuracy :arrow_right: {acc}%")
 
+st.write("")
+st.write("")
 
-
-
-#PLOT
-st.write(f"### Plotting the {df_name} dataset using PCA")
-pca = PCA(2)   #2 is the number of dimensions
-X_projected = pca.fit_transform(X)
-
-x1 = X_projected[:,0]
-x2 = X_projected[:,1]
-
-fig = plt.figure()
-plt.scatter(x1,x2, c=y, alpha = 0.8, cmap="viridis")
-plt.xlabel("Principal Component 1")
-plt.ylabel("Principal Component 2")
-plt.colorbar()
-st.set_option('deprecation.showPyplotGlobalUse', False)
+#PLOT CONFUSION MATRIX
+st.header("Confusion Matrix")
+st.write()
+from sklearn.metrics import classification_report,confusion_matrix
+cm = confusion_matrix(y_test,y_pred)
+fig2 = plt.figure
+sns.heatmap(cm,annot=True)
 st.pyplot()
+
+#CLASSIFICATION REPORT
+st.header("Classification Report")
+report = classification_report(y_test,y_pred,output_dict=True)
+st.dataframe(report)
+
+
