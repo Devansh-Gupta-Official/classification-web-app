@@ -9,6 +9,8 @@ from sklearn.metrics import accuracy_score
 from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
 import seaborn as sns
+from streamlit_lottie import st_lottie
+import json
 
 st.set_page_config(
     page_title="classification",
@@ -22,10 +24,32 @@ st.set_page_config(
 # </style> """, unsafe_allow_html=True)
 # st.markdown('<h1 class="font">Explore Different Classifiers</h1>',unsafe_allow_html=True)
 
-st.title("Explore Different Classifiers")
-st.write("## Which one is the best:question:")
-st.write("")
-st.write("")
+h1,h2 = st.columns([2,1])
+
+with h1:
+    st.title("Explore Different Classifiers")
+    st.write("## Which one is the best:question:")
+
+with h2:
+    def load_animations(filepath:str):
+        with open(filepath,'r',encoding="utf8") as f:
+            return json.load(f)
+
+    icon = load_animations("icon.json")
+    st_lottie(
+        icon,
+        speed=1,
+        reverse=False,
+        loop=True,
+        quality='medium',
+        height=None,
+        width=None,
+        key="icon"
+    )
+
+
+# st.write("")
+# st.write("")
 
 df_name = st.sidebar.selectbox("Select Dataset",["Iris","Breast Cancer","Wine Dataset"])
 
