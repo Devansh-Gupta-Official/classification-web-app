@@ -10,6 +10,18 @@ from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+st.set_page_config(
+    page_title="classification",
+    page_icon=":question:",
+    initial_sidebar_state="auto",
+    layout="wide"
+)
+
+# st.markdown(""" <style> .font {
+# font-size:50px ; font-family: 'Lucida Console'; color: #F2F2F2;} 
+# </style> """, unsafe_allow_html=True)
+# st.markdown('<h1 class="font">Explore Different Classifiers</h1>',unsafe_allow_html=True)
+
 st.title("Explore Different Classifiers")
 st.write("## Which one is the best:question:")
 st.write("")
@@ -31,8 +43,8 @@ def get_dataset(df_name):
 
 
 X, y = get_dataset(df_name)
-st.sidebar.write(f"Shape of Dataset is {X.shape}")
-st.sidebar.write(f"Number of Unique Classes in the Dataset is {len(np.unique(y))}")
+st.sidebar.write(f"Shape of Dataset is **{X.shape}**")
+st.sidebar.write(f"Number of Unique Classes in the Dataset is **{len(np.unique(y))}**")
 
 st.sidebar.write("")
 
@@ -103,11 +115,20 @@ acc = accuracy_score(y_test,y_pred)
 acc = round(acc,4)
 acc = acc*100;
 
-st.write(f"Classifier :arrow_right: {classifier_name}")
-st.write(f"Accuracy :arrow_right: {acc}%")
+# st.warning(f"## Selected Classifier :arrow_right: {classifier_name}")
+st.header(f":heavy_check_mark: {classifier_name} Results on {df_name} Dataset: ")
 
-st.write("")
-st.write("")
+
+#PREDICTOR
+# if df_name=="Iris":
+#     input1 = st.number_input("Sepal Length (cm)", 3.0,10.0)
+#     input2 = st.number_input("Sepal Width (cm)", 1.0,5.0)
+#     input3 = st.number_input("Petal Length (cm)", 0.0,10.0)
+#     input4 = st.number_input("Petal Width (cm)", 0.0,3.0)
+    
+#     prediction = classifier.predict(np.array(input1,input2,input3,input4))
+#     st.write(prediction)
+
 
 #PLOT CONFUSION MATRIX
 st.header("Confusion Matrix")
@@ -121,6 +142,35 @@ st.pyplot()
 #CLASSIFICATION REPORT
 st.header("Classification Report")
 report = classification_report(y_test,y_pred,output_dict=True)
-st.dataframe(report)
+st.dataframe(report,use_container_width=True)
+
+st.info(f"Accuracy :arrow_right: {acc}%")
+
+st.write("")
+st.write("")
+
+col1,col2,col3 = st.columns(3)
+#how to use, about, etc
+# Add "How to Use" Section
+with col1:
+    st.header("How to Use")
+    st.write("Choose a dataset from the sidebar using the 'Select Dataset' dropdown.")
+    st.write("Explore the dataset characteristics in the sidebar.")
+    st.write("Select a classifier from the 'Select Classifier' dropdown.")
+    st.write("Adjust the classifier parameters in the sidebar if necessary.")
+    st.write("See the classifier results, confusion matrix, and classification report.")
+
+# Add "About" Section
+with col2:
+    st.header("About")
+    st.write("This Streamlit app allows you to explore different classifiers on three datasets: Iris, Breast Cancer, and Wine.")
+    st.write("It supports K-Nearest Neighbors (KNN), Support Vector Machine (SVM), and Random Forest classifiers.")
+    st.write("The application provides insights into the dataset through Principal Component Analysis (PCA) plots.")
+    st.write("Confusion matrix and classification report are displayed to evaluate classifier performance.")
 
 
+# source code
+with col3:
+    st.header("Source Code")
+    st.write("The source code for this Streamlit app is available on GitHub.")
+    st.write("[Link to GitHub Repository](https://github.com/Devansh-Gupta-Official/classification-web-app)")
