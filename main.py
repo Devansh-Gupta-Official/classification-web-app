@@ -71,7 +71,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 X, y = get_dataset(df_name)
 st.sidebar.write(f"Shape of Dataset is **{X.shape}**")
-st.sidebar.write(f"Number of Unique Classes in the Dataset is **{len(np.unique(y))}**")
+st.sidebar.write(f"Number of Classes in the Dataset is **{len(np.unique(y))}**")
 
 st.sidebar.write("")
 
