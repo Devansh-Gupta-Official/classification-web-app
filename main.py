@@ -24,7 +24,7 @@ st.set_page_config(
 # </style> """, unsafe_allow_html=True)
 # st.markdown('<h1 class="font">Explore Different Classifiers</h1>',unsafe_allow_html=True)
 
-h1,h2 = st.columns([2,1])
+h1,h2 = st.columns([3,1])
 
 with h1:
     st.title("Explore Different Classifiers")
@@ -51,6 +51,7 @@ with h2:
 # st.write("")
 # st.write("")
 
+
 df_name = st.sidebar.selectbox("Select Dataset",["Iris","Breast Cancer","Wine Dataset"])
 
 
@@ -64,6 +65,8 @@ def get_dataset(df_name):
     X = data.data
     y = data.target
     return X, y
+
+st.set_option('deprecation.showPyplotGlobalUse', False)
 
 
 X, y = get_dataset(df_name)
@@ -140,7 +143,7 @@ acc = round(acc,4)
 acc = acc*100;
 
 # st.warning(f"## Selected Classifier :arrow_right: {classifier_name}")
-st.header(f":heavy_check_mark: {classifier_name} Results on {df_name} Dataset: ")
+st.header(f"{classifier_name} Results on {df_name} Dataset: ")
 
 
 #PREDICTOR
@@ -173,28 +176,30 @@ st.info(f"Accuracy :arrow_right: {acc}%")
 st.write("")
 st.write("")
 
+st.divider()
+
 col1,col2,col3 = st.columns(3)
 #how to use, about, etc
 # Add "How to Use" Section
 with col1:
-    st.header("How to Use")
-    st.write("Choose a dataset from the sidebar using the 'Select Dataset' dropdown.")
-    st.write("Explore the dataset characteristics in the sidebar.")
-    st.write("Select a classifier from the 'Select Classifier' dropdown.")
-    st.write("Adjust the classifier parameters in the sidebar if necessary.")
-    st.write("See the classifier results, confusion matrix, and classification report.")
+    st.write("How to Use")
+    st.caption("Choose a dataset from the sidebar using the 'Select Dataset' dropdown.")
+    st.caption("Explore the dataset characteristics in the sidebar.")
+    st.caption("Select a classifier from the 'Select Classifier' dropdown.")
+    st.caption("Adjust the classifier parameters in the sidebar if necessary.")
+    st.caption("See the classifier results, confusion matrix, and classification report.")
 
 # Add "About" Section
 with col2:
-    st.header("About")
-    st.write("This Streamlit app allows you to explore different classifiers on three datasets: Iris, Breast Cancer, and Wine.")
-    st.write("It supports K-Nearest Neighbors (KNN), Support Vector Machine (SVM), and Random Forest classifiers.")
-    st.write("The application provides insights into the dataset through Principal Component Analysis (PCA) plots.")
-    st.write("Confusion matrix and classification report are displayed to evaluate classifier performance.")
+    st.write("About")
+    st.caption("This Streamlit app allows you to explore different classifiers on three datasets: Iris, Breast Cancer, and Wine.")
+    st.caption("It supports K-Nearest Neighbors (KNN), Support Vector Machine (SVM), and Random Forest classifiers.")
+    st.caption("The application provides insights into the dataset through Principal Component Analysis (PCA) plots.")
+    st.caption("Confusion matrix and classification report are displayed to evaluate classifier performance.")
 
 
 # source code
 with col3:
-    st.header("Source Code")
-    st.write("The source code for this Streamlit app is available on GitHub.")
-    st.write("[Link to GitHub Repository](https://github.com/Devansh-Gupta-Official/classification-web-app)")
+    st.write("Source Code")
+    st.caption("The source code for this Streamlit app is available on GitHub.")
+    st.caption("[Link to GitHub Repository](https://github.com/Devansh-Gupta-Official/classification-web-app)")
