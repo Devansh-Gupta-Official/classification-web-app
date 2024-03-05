@@ -10,7 +10,7 @@ from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
 import seaborn as sns
 from streamlit_lottie import st_lottie
-import json
+import simplejson
 
 st.set_page_config(
     page_title="Classification",
@@ -33,7 +33,7 @@ with h1:
 with h2:
     def load_animations(filepath:str):
         with open(filepath,'r',encoding="utf8") as f:
-            return json.load(f)
+            return simplejson.load(f)
 
     icon = load_animations("icon.json")
     st_lottie(
