@@ -219,18 +219,7 @@ with col3:
 st.write("")
 st.write("")
 
-# def streamlit_feedback(
-#     feedback_type,
-#     optional_text_label=None,
-#     max_text_length=None,
-#     disable_with_score=None,
-#     on_submit=None,
-#     args=(),
-#     kwargs={},
-#     align="flex-end",
-#     key=None,
-# ):
-
+st.divider()
 
 #ADDING FEEDBACK 1
 # feedback = streamlit_feedback(
@@ -256,7 +245,7 @@ st.write("")
 
 #ADDING FEEDBACK 2
 def center_content():
-    col1, col2, col3 = st.columns([2, 2, 1])
+    col1, col2, col3 = st.columns([3, 2, 1])
     return col1, col2, col3
 
 stars = st_star_rating("Please rate your experience!", maxValue=5, defaultValue=0, key="rating", dark_theme=True)
