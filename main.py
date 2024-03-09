@@ -255,21 +255,24 @@ st.write("")
 
 
 #ADDING FEEDBACK 2
-stars = st_star_rating("Please rate you experience!", maxValue=5, defaultValue=0, key="rating",dark_theme = True,
-                    #    emoticons = True, 
-                    #    resetLabel = "Reset",
-                        # customCSS = "div {background-color: red;}"
-                        )
+def center_content():
+    col1, col2, col3 = st.columns([2, 2, 1])
+    return col1, col2, col3
 
-if stars==1:
-    st.text_input("Feedback",placeholder='Enter your Feedback')
-elif stars==2:
-    st.text_input("Feedback",placeholder='Enter your Feedback')
-elif stars==3:
-    st.text_input("Feedback",placeholder='Enter your Feedback')
-elif stars==4:
-    st.header("Thank you for your feedback!")
-    st.balloons()
-elif stars==5:
-    st.write("Thank you for your feedback!")
-    st.balloons()
+stars = st_star_rating("Please rate your experience!", maxValue=5, defaultValue=0, key="rating", dark_theme=True)
+
+# Centering content
+col1, col2, col3 = center_content()
+
+if stars in [1, 2, 3]:
+    with col1:
+        st.write("We value your feedback! Please let us know how we can improve.")
+        feedback = st.text_area("Enter your Feedback", placeholder='Type here...', height=150)
+        if st.button("Submit Feedback"):
+            # Add logic to handle the feedback submission if needed
+            st.success("Feedback submitted successfully!")
+
+elif stars in [4, 5]:
+    with col1:
+        st.write("Thank you for your positive feedback!")
+        st.balloons()
