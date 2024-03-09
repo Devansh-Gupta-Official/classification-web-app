@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from streamlit_lottie import st_lottie
 import simplejson
-from streamlit_feedback import streamlit_feedback  #from trubrics
+# from streamlit_feedback import streamlit_feedback  #from trubrics
 from streamlit_star_rating import st_star_rating
 
 st.set_page_config(
