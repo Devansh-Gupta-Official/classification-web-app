@@ -3,3 +3,6 @@ primaryColor="#ffffff"
 backgroundColor="#000000"
 secondaryBackgroundColor="#292933"
 textColor="#f2f2f2"
+
+[ui]
+hideTopBar = true

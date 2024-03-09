@@ -19,6 +19,14 @@ st.set_page_config(
     layout="wide"
 )
 
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 # st.markdown(""" <style> .font {
 # font-size:50px ; font-family: 'Lucida Console'; color: #F2F2F2;} 
 # </style> """, unsafe_allow_html=True)
