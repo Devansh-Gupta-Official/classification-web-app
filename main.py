@@ -268,7 +268,8 @@ elif stars==2:
 elif stars==3:
     st.text_input("Feedback",placeholder='Enter your Feedback')
 elif stars==4:
-    st.write("Thank you for your feedback!")
+    st.header("Thank you for your feedback!")
+    st.balloons()
 elif stars==5:
     st.write("Thank you for your feedback!")
     st.balloons()
