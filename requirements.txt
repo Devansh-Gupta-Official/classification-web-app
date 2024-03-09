@@ -5,3 +5,5 @@ matplotlib==3.8.3
 seaborn==0.13.2
 streamlit_lottie==0.0.5
 simplejson==3.19.2
+# streamlit-feedback==0.1.2
+st-star-rating==0.0.6

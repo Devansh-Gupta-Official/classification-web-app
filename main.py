@@ -11,6 +11,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from streamlit_lottie import st_lottie
 import simplejson
+from streamlit_feedback import streamlit_feedback  #from trubrics
+from streamlit_star_rating import st_star_rating
 
 st.set_page_config(
     page_title="Classification",
@@ -213,3 +215,60 @@ with col3:
     st.write("Source Code")
     st.caption("The source code for this Streamlit app is available on GitHub.")
     st.caption("[Link to GitHub Repository](https://github.com/Devansh-Gupta-Official/classification-web-app)")
+
+st.write("")
+st.write("")
+
+# def streamlit_feedback(
+#     feedback_type,
+#     optional_text_label=None,
+#     max_text_length=None,
+#     disable_with_score=None,
+#     on_submit=None,
+#     args=(),
+#     kwargs={},
+#     align="flex-end",
+#     key=None,
+# ):
+
+
+#ADDING FEEDBACK 1
+# feedback = streamlit_feedback(
+#     feedback_type="faces",
+#     # optional_text_label="Please provide an explanation",
+#     align="center"
+# )
+
+# if feedback == None:
+#     pass
+# elif feedback['score']=='😞':
+#     st.text_input("Feedback",placeholder='Enter your Feedback')
+# elif feedback['score']=='🙁':
+#     st.text_input("Feedback",placeholder='Enter your Feedback')
+# elif feedback['score']=='😐':
+#     st.text_input("Feedback",placeholder='Enter your Feedback')
+# elif feedback['score']=='🙂':
+#     st.write("Thank you for your feedback!")
+# elif feedback['score']=='😀':
+#     st.write("Thank you for your feedback!")
+#     st.balloons()
+
+
+#ADDING FEEDBACK 2
+stars = st_star_rating("Please rate you experience!", maxValue=5, defaultValue=0, key="rating",dark_theme = True,
+                    #    emoticons = True, 
+                    #    resetLabel = "Reset",
+                        # customCSS = "div {background-color: red;}"
+                        )
+
+if stars==1:
+    st.text_input("Feedback",placeholder='Enter your Feedback')
+elif stars==2:
+    st.text_input("Feedback",placeholder='Enter your Feedback')
+elif stars==3:
+    st.text_input("Feedback",placeholder='Enter your Feedback')
+elif stars==4:
+    st.write("Thank you for your feedback!")
+elif stars==5:
+    st.write("Thank you for your feedback!")
+    st.balloons()
