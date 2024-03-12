@@ -14,4 +14,17 @@ This Streamlit web application allows users to explore different classifiers on 
 
 This application supports three datasets: Iris, Breast Cancer, and Wine. The available classifiers are K-Nearest Neighbors (KNN), Support Vector Machine (SVM), and Random Forest. Principal Component Analysis (PCA) plots provide insights into the dataset, while confusion matrices and classification reports help evaluate classifier performance.
 
+
+## Feedback
+We appreciate your feedback! Please rate your experience using the star rating system below.
+
+If you rated 1-3 stars, we value your feedback! Please let us know how we can improve by providing your comments in the "Enter your Feedback" text area.
+If you rated 4-5 stars, thank you for your positive feedback! Enjoy exploring the classifiers!
+Note: If you encounter any issues or have suggestions, feel free to submit feedback.
+
+## How to Run
+Install the required packages by running pip install -r requirements.txt.
+Run the app using streamlit run your_app_file.py.
+
+
 https://classification-web-app.streamlit.app/
