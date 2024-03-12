@@ -56,9 +56,9 @@ This application supports three datasets: Iris, Breast Cancer, and Wine. The ava
 ## Feedback
 We appreciate your feedback! Please rate your experience using the star rating system below.
 
-If you rated 1-3 stars, we value your feedback! Please let us know how we can improve by providing your comments in the "Enter your Feedback" text area.
-If you rated 4-5 stars, thank you for your positive feedback! Enjoy exploring the classifiers!
-Note: If you encounter any issues or have suggestions, feel free to submit feedback.
+- If you rated 1-3 stars, we value your feedback! Please let us know how we can improve by providing your comments in the "Enter your Feedback" text area.
+- If you rated 4-5 stars, thank you for your positive feedback! Enjoy exploring the classifiers!
+**Note: If you encounter any issues or have suggestions, feel free to submit feedback.**
 
 ## How to Run
 1. Install the required packages by running ```pip install -r requirements.txt```.
