@@ -2,6 +2,9 @@
 
 This Streamlit web application allows users to explore different classifiers on three datasets: Iris, Breast Cancer, and Wine. It supports three classifiers: K-Nearest Neighbors (KNN), Support Vector Machine (SVM), and Random Forest. The app provides insights into dataset characteristics, including PCA plots, confusion matrices, and classification reports to evaluate classifier performance.
 
+**LINK TO THE APP-**
+https://classification-web-app.streamlit.app/
+
 #### Datasets
 1. Iris Dataset
 The Iris dataset contains measurements of sepal length, sepal width, petal length, and petal width for three species of iris flowers.
@@ -58,6 +61,6 @@ If you rated 4-5 stars, thank you for your positive feedback! Enjoy exploring th
 Note: If you encounter any issues or have suggestions, feel free to submit feedback.
 
 ## How to Run
-Install the required packages by running pip install -r requirements.txt.
-Run the app using streamlit run your_app_file.py.
+1. Install the required packages by running ```pip install -r requirements.txt```.
+2. Run the app using ```streamlit run main.py```.
 
