@@ -2,6 +2,26 @@
 
 This Streamlit web application allows users to explore different classifiers on three datasets: Iris, Breast Cancer, and Wine. It supports three classifiers: K-Nearest Neighbors (KNN), Support Vector Machine (SVM), and Random Forest. The app provides insights into dataset characteristics, including PCA plots, confusion matrices, and classification reports to evaluate classifier performance.
 
+### Datasets
+1. Iris Dataset
+The Iris dataset contains measurements of sepal length, sepal width, petal length, and petal width for three species of iris flowers.
+
+2. Breast Cancer Dataset
+The Breast Cancer dataset includes features derived from digitized images of fine needle aspirates (FNA) of breast masses. It aims to predict whether a mass is malignant or benign.
+
+3. Wine Dataset
+The Wine dataset consists of chemical analysis results for wines, classified into three classes. It serves as a classification task for wine categories.
+
+### Classifier Options
+1. K-Nearest Neighbors (KNN)
+KNN is a simple and effective algorithm that classifies a data point based on the majority class among its k-nearest neighbors.
+
+2. Support Vector Machine (SVM)
+SVM is a powerful algorithm that constructs a hyperplane in a high-dimensional space to separate data into classes.
+
+3. Random Forest
+Random Forest is an ensemble learning method that builds multiple decision trees and merges their predictions for more accurate and robust results.
+
 ## Usage
 
 - Choose a dataset from the sidebar using the 'Select Dataset' dropdown.
