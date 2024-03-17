@@ -5,6 +5,14 @@ This Streamlit web application allows users to explore different classifiers on 
 **LINK TO THE APP-**
 https://classification-web-app.streamlit.app/
 
+![image](https://github.com/Devansh-Gupta-Official/classification-web-app/assets/100591612/24049e46-4ed4-457e-a2c0-23723521e53c)
+
+![image](https://github.com/Devansh-Gupta-Official/classification-web-app/assets/100591612/ecd85903-de66-4b58-85bb-1511393d98f2)
+
+![image](https://github.com/Devansh-Gupta-Official/classification-web-app/assets/100591612/58e627ba-95cc-449e-8a2e-141aee675e08)
+
+
+
 #### Datasets
 1. Iris Dataset
 The Iris dataset contains measurements of sepal length, sepal width, petal length, and petal width for three species of iris flowers.
